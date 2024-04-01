@@ -2,50 +2,7 @@
 
 {% block stylesheets %}
     <link href="https://fonts.cdnfonts.com/css/roboto" rel="stylesheet">
-    <style>
-        body {
-            color: white;
-            background-color: black;
-            padding: 0;
-            margin: 0;
-            height: 100vh;
-            font-family: Roboto, serif;
-            display: flex;
-            justify-content: space-evenly;
-            align-items: stretch;
-            flex-direction: column;
-        }
-        h1 {
-            text-align: center;
-        }
-        .link-container {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-            align-items: flex-start;
-            text-align: center;
-        }
-
-        a {
-            text-decoration: none;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            max-width: min-content;
-            alignment-baseline: top;
-        }
-
-        a img {
-            background-color: white;
-            border-radius: 20px;
-            padding: 10px;
-        }
-
-        a:hover {
-            filter: brightness(75%);
-        }
-    </style>
+    <link href="{{ asset('assets/stylesheets/index.css') }}" rel="stylesheet">
 {% endblock stylesheets %}
 
 {% block body %}
