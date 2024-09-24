@@ -1,7 +1,7 @@
 twig:
     file_name_pattern: '*.twig'
     globals:
-        link: '@App\Business\LinkBusiness'
+        title: '%env(APP_TITLE_PAGE)%'
 
 when@test:
     twig:

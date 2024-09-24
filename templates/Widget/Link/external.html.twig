@@ -1,4 +1,4 @@
-<a href="{{ 'http://' ~ content.link }}" target="_blank">
-    <img src="{{ asset(content.svg) }}" alt="{{ name }} logo" width="150" height="150">
-    <p>{{ content.description }}</p>
+<a href="{{ link.url }}" target="_blank">
+    <img src="{{ asset('assets/images/logo/' ~ link.logo) }}" alt="{{ link.description }} logo" width="150" height="150">
+    <p>{{ link.description }}</p>
 </a>

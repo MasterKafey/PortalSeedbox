@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
     libpq-dev \
     libzip-dev
 
-RUN docker-php-ext-install sodium intl curl fileinfo gd zip
+RUN docker-php-ext-install sodium intl curl fileinfo gd zip pdo_mysql
 
 RUN apt clean && rm -rf /var/lib/apt/lists/*
 
@@ -34,7 +34,7 @@ RUN groupadd -r seedbox && useradd -r -g seedbox seedbox \
     && chown -R seedbox:seedbox /var/www/html
 
 USER seedbox
-RUN composer install --no-dev --optimize-autoloader
+RUN composer install --no-scripts --no-dev --optimize-autoloader
 USER root
 
 EXPOSE 80

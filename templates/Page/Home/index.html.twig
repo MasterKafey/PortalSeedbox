@@ -6,21 +6,10 @@
 {% endblock stylesheets %}
 
 {% block body %}
-    {% set links = {
-        'Plex': {svg: 'assets/images/logo/plex.svg', link: link.plexHostname, description: 'Streaming'},
-        'Jellyseer': {svg: 'assets/images/logo/jellyseerr.svg', link: link.jellyseerHostname, description: 'Requêtes de contenu'},
-        'QBittorrent': {svg: 'assets/images/logo/qbittorrent.svg', link: link.qbittorrentHostname, description: 'Téléchargeur de torrents'},
-        'Radarr': {svg: 'assets/images/logo/radarr.svg', link: link.radarrHostname, description: 'Films'},
-        'Sonarr': {svg: 'assets/images/logo/sonarr.svg', link: link.sonarrHostname, description: 'Séries'},
-        'Readarr': {svg: 'assets/images/logo/readarr.svg', link: link.readarrHostname, description: 'Livres'},
-        'Prowlarr': {svg: 'assets/images/logo/prowlarr.svg', link: link.prowlarrHostname, description: "Gestionnaire d'indexeur"},
-        'Bazarr': {svg: 'assets/images/logo/bazarr.svg', link: link.bazarrHostname, description: 'Configurateur'},
-        'Duplicati': {svg: 'assets/images/logo/duplicati.svg', link: link.duplicatiHostname, description: 'Système de backup'},
-    } %}
-    <h1>Zeldo Seedbox</h1>
+    <h1>{{ title }}</h1>
     <div class="link-container">
-        {% for name, content in links %}
-            {% include 'Widget/Link/external.html.twig' with {'name': name, 'content': content} %}
+        {% for link in links %}
+            {% include 'Widget/Link/external.html.twig' with {'link': link} %}
         {% endfor %}
     </div>
 {% endblock body %}
