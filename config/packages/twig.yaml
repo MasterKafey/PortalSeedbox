@@ -2,6 +2,7 @@ twig:
     file_name_pattern: '*.twig'
     globals:
         title: '%env(APP_TITLE_PAGE)%'
+        title_meta: '%env(APP_TITLE_META)%'
 
 when@test:
     twig:
